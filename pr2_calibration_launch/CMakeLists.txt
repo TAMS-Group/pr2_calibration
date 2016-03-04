@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(pr2_calibration_launch)
 # Load catkin and all dependencies required for this package
 # TODO: remove all from COMPONENTS that are not catkin packages.
-find_package(catkin REQUIRED COMPONENTS cmake_modules calibration_msgs calibration_estimation calibration_launch pr2_dense_laser_snapshotter laser_cb_detector laser_joint_processor laser_joint_projector stereo_image_proc image_cb_detector monocam_settler image_view robot_mechanism_controllers sensor_msgs geometry_msgs pr2_teleop rospy rostest kdl_parser)
+find_package(catkin REQUIRED COMPONENTS cmake_modules calibration_msgs calibration_estimation calibration_launch pr2_dense_laser_snapshotter laser_cb_detector laser_joint_processor laser_joint_projector stereo_image_proc image_cb_detector monocam_settler image_view robot_mechanism_controllers sensor_msgs geometry_msgs pr2_teleop rospy rostest kdl_parser orocos_kdl)
 
 # include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS})
 # CATKIN_MIGRATION: removed during catkin migration

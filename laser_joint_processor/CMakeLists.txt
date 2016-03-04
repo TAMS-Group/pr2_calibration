@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(laser_joint_processor)
 # Load catkin and all dependencies required for this package
 # TODO: remove all from COMPONENTS that are not catkin packages.
-find_package(catkin REQUIRED COMPONENTS geometry_msgs message_filters settlerlib joint_states_settler)
+find_package(catkin REQUIRED COMPONENTS geometry_msgs message_filters settlerlib joint_states_settler image_geometry)
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED COMPONENTS signals thread)
 
@@ -62,7 +62,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 # TODO: fill in what other packages will need to use this package
 catkin_package(
     DEPENDS
-    CATKIN_DEPENDS geometry_msgs message_filters settlerlib joint_states_settler
+    CATKIN_DEPENDS geometry_msgs message_filters settlerlib joint_states_settler image_geometry
     INCLUDE_DIRS include/${PROJECT_NAME}# TODO include
     LIBRARIES # TODO
 )
