@@ -1,11 +1,17 @@
 <launch>
   <machine name="c1" address="c1" env-loader="$(env ROS_ENV_LOADER)" default="True"/>
 
+<!-- TAMS
   <node type="pr2_controller_manager" pkg="pr2_controller_manager" name="cal_controller_starter"
         args="start r_arm_controller l_arm_controller"/>
+-->
+  <node type="pr2_controller_manager" pkg="pr2_controller_manager" name="cal_controller_starter"
+        args="start l_arm_controller"/>
 
   <!-- Chains -->
+<!-- TAMS
   <include file="$(find calibration_launch)/capture_data/chain_settler.launch" ns="right_arm_chain" />
+-->
 
   <include file="$(find calibration_launch)/capture_data/chain_settler.launch" ns="left_arm_chain" />
 
@@ -17,6 +23,7 @@
 
   <include file="$(find calibration_launch)/capture_data/monocam_pipeline.launch" ns="l_forearm_cam" />
 
+<!-- TAMS
   <include file="$(find calibration_launch)/capture_data/monocam_pipeline.launch" ns="r_forearm_cam" />
 
   <include file="$(find calibration_launch)/capture_data/monocam_pipeline.launch" ns="kinect_head/rgb" >
@@ -26,13 +33,16 @@
   <include file="$(find calibration_launch)/capture_data/monocam_pipeline.launch" ns="kinect_torso/rgb" >
     <arg name="image_topic" value="image_mono"/>
   </include>
+-->
 
   <include file="$(find pr2_calibration_launch)/capture_data/intersection.launch" />
   <include file="$(find pr2_calibration_launch)/capture_data/laser_pipelines.launch" />
 
+<!-- TAMS
   <machine name="c2" address="c2" env-loader="$(env ROS_ENV_LOADER)" default="True"/>
   <include file="$(find pr2_calibration_launch)/capture_data/prosilica.launch" />
   <include file="$(find pr2_calibration_launch)/capture_data/prosilica_kinect.launch" />
   <machine name="c1" address="c1" env-loader="$(env ROS_ENV_LOADER)" default="True"/>
+-->
 
 </launch>

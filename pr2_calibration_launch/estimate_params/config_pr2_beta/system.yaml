@@ -2,12 +2,13 @@ base_link: torso_lift_link
 
 sensors:
   chains: 
-    right_arm_chain:
-      root: torso_lift_link
-      tip: r_wrist_roll_link
-      cov:
-        joint_angles: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-      gearing: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+# TAMS
+#    right_arm_chain:
+#      root: torso_lift_link
+#      tip: r_wrist_roll_link
+#      cov:
+#        joint_angles: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+#      gearing: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
     left_arm_chain:
       root: torso_lift_link
       tip: l_wrist_roll_link
@@ -64,22 +65,24 @@ sensors:
       cx_shift: 0.0
       cy_shift: 0.0
       cov: {u: 0.125, v: 0.125}
-    prosilica_rect:
-      chain_id: head_chain  #TODO: get rid of this
-      frame_id: high_def_optical_frame
-      baseline_shift: 0.0
-      f_shift: 0.0
-      cx_shift: 0.0
-      cy_shift: 0.0
-      cov: {u: 0.25, v: 0.25}
-    kinect_head:
-      chain_id: head_chain  #TODO: get rid of this
-      frame_id: head_mount_kinect_rgb_optical_frame
-      baseline_shift: 0.0
-      f_shift: 0.0
-      cx_shift: 0.0
-      cy_shift: 0.0
-      cov: {u: 0.25, v: 0.25}
+# TAMS
+#    prosilica_rect:
+#      chain_id: head_chain  #TODO: get rid of this
+#      frame_id: high_def_optical_frame
+#      baseline_shift: 0.0
+#      f_shift: 0.0
+#      cx_shift: 0.0
+#      cy_shift: 0.0
+#      cov: {u: 0.25, v: 0.25}
+#    kinect_head:
+#      chain_id: head_chain  #TODO: get rid of this
+#      frame_id: head_mount_kinect_rgb_optical_frame
+#      baseline_shift: 0.0
+#      f_shift: 0.0
+#      cx_shift: 0.0
+#      cy_shift: 0.0
+#      cov: {u: 0.25, v: 0.25}
+# ------
 #    kinect_torso:
 #      chain_id: NULL
 #      frame_id: torso_mount_kinect_rgb_optical_frame
@@ -96,17 +99,19 @@ sensors:
       cx_shift: 0.0
       cy_shift: 0.0
       cov: {u: 0.125, v: 0.125}
-    forearm_right_rect:
-      chain_id: right_arm_chain  #TODO: get rid of this
-      frame_id: r_forearm_cam_optical_frame
-      baseline_shift: 0.0
-      f_shift: 0.0
-      cx_shift: 0.0
-      cy_shift: 0.0
-      cov: {u: 0.125, v: 0.125}
+# TAMS
+#    forearm_right_rect:
+#      chain_id: right_arm_chain  #TODO: get rid of this
+#      frame_id: r_forearm_cam_optical_frame
+#      baseline_shift: 0.0
+#      f_shift: 0.0
+#      cx_shift: 0.0
+#      cy_shift: 0.0
+#      cov: {u: 0.125, v: 0.125}
 
 transforms:
-  right_arm_chain_cb: [ 0.25, 0, 0, -pi/2, 0, 0]
+# TAMS
+#  right_arm_chain_cb: [ 0.25, 0, 0, -pi/2, 0, 0]
   left_arm_chain_cb:  [ 0.25, 0, 0, pi/2, 0, 0]
 
 checkerboards:
