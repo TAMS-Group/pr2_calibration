@@ -90,3 +90,10 @@ target_link_libraries(laser_joint_processor_node ${Boost_LIBRARIES} ${OpenCV_LIB
 
 #catkin_add_gtest(laser_joint_processor_unittest test/#laser_joint_processor_unittest.cpp)
 #target_link_libraries(laser_joint_processor_unittest laser_joint_processor)
+
+install(TARGETS laser_joint_processor_node DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(DIRECTORY include/${PROJECT_NAME}/
+      DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+        PATTERN ".svn" EXCLUDE
+)

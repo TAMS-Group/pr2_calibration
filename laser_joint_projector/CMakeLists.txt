@@ -2,7 +2,7 @@
 # Catkin CMake Standard: http://www.ros.org/doc/groovy/api/catkin/html/user_guide/standards.html
 cmake_minimum_required(VERSION 2.8.3)
 project(laser_joint_projector)
-find_package(catkin REQUIRED COMPONENTS cmake_modules calibration_msgs roscpp geometry_msgs roscpp_serialization orocos_kdl kdl_parser)
+find_package(catkin REQUIRED COMPONENTS cmake_modules calibration_msgs roscpp geometry_msgs roscpp_serialization kdl_parser)
 find_package(cmake_modules REQUIRED)
 
 find_package(kdl_parser REQUIRED)
@@ -73,4 +73,6 @@ target_link_libraries(keyboard_float_generator ${catkin_LIBRARIES})
 add_executable(time_alignment_node src/time_alignment_node.cpp)
 target_link_libraries(time_alignment_node ${PROJECT_NAME} ${catkin_LIBRARIES} ${Eigen_LIBRARIES} ${kdl_parser_LIBRARIES} ${orocos_kdl_LIBRARIES})
 
-
+install(TARGETS laser_joint_projector_node DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS keyboard_float_generator DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS time_alignment_node DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

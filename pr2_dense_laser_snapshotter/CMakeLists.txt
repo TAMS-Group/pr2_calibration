@@ -18,3 +18,4 @@ add_executable(dense_laser_snapshotter src/dense_laser_snapshotter.cpp)
 target_link_libraries(dense_laser_snapshotter ${catkin_LIBRARIES})
 add_dependencies(dense_laser_snapshotter ${catkin_EXPORTED_TARGETS} dense_laser_assembler_gencpp )
 
+install(TARGETS dense_laser_snapshotter DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
