@@ -55,15 +55,18 @@ time.sleep(1.0)
 left_sample_names  = [x for x in os.listdir(samples_dir + "/left/")  if ".yaml" in x]
 right_sample_names = []
 far_sample_names = []
-right_sample_names = [x for x in os.listdir(samples_dir + "/right/") if ".yaml" in x]
+# TAMS
+#right_sample_names = [x for x in os.listdir(samples_dir + "/right/") if ".yaml" in x]
 far_sample_names   = [x for x in os.listdir(samples_dir + "/far/")   if ".yaml" in x]
 
 left_sample_names.sort()
-right_sample_names.sort()
+# TAMS
+#right_sample_names.sort()
 far_sample_names.sort()
 
 print "Left Samples: \n - %s" % "\n - ".join(left_sample_names)
-print "Right Samples: \n - %s" % "\n - ".join(right_sample_names)
+# TAMS
+#print "Right Samples: \n - %s" % "\n - ".join(right_sample_names)
 print "Far Samples: \n - %s" % "\n - ".join(far_sample_names)
 
 pub = rospy.Publisher("robot_measurement", RobotMeasurement)
@@ -86,10 +89,11 @@ try:
             print "Choose sample index"
             resp = raw_input("> ")
             cur_sample_path = samples_dir + "/left/" + left_sample_names[int(resp)]
-        elif string.upper(resp) == "R":
-            print "Choose sample index"
-            resp = raw_input("> ")
-            cur_sample_path = samples_dir + "/right/" + right_sample_names[int(resp)]
+# TAMS
+#        elif string.upper(resp) == "R":
+#            print "Choose sample index"
+#            resp = raw_input("> ")
+#            cur_sample_path = samples_dir + "/right/" + right_sample_names[int(resp)]
         elif string.upper(resp) == "F":
             cur_sample_path = samples_dir + "/far/" + far_sample_names[0]
         elif string.upper(resp) == "":

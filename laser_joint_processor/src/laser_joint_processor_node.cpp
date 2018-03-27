@@ -208,7 +208,7 @@ int main(int argc, char** argv)
 
   vector<string> joint_names;
   getParamConfig(private_nh, joint_names);
-  processor.configure(joint_names, 20000);
+  processor.configure(joint_names, 2000);
 
   boost::function<void()> func = boost::bind(&spinFunc, (ros::CallbackQueue*) &queue);
 
