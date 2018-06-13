@@ -112,7 +112,9 @@ sensors:
 transforms:
 # TAMS
 #  right_arm_chain_cb: [ 0.25, 0, 0, -pi/2, 0, 0]
-  left_arm_chain_cb:  [ 0.25, 0, 0, pi/2, 0, 0]
+# TAMS without ft
+#  left_arm_chain_cb:  [ 0.25, 0, 0, pi/2, 0, 0]
+  left_arm_chain_cb:  [ 0.286, 0, 0, pi/2, 0, 0]
 
 checkerboards:
   small_cb_4x5:
